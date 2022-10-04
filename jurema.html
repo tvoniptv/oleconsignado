@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>Olé Consignado</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+        
+        .d-none {
+            display: none;
+        }
+
+        .uploading {
+            position: fixed;
+            z-index: 999;
+            height: 100vh;
+            width: 100vw;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+        }
+
+        .no-radius {
+            border-radius: 0 !important;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .box-center-center {
+            margin-top: calc(50vh - 65px);
+        }
+
+        @keyframes load8 {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
+        .loader {
+            margin: 0 auto;
+            font-size: 10px;
+            position: relative;
+            text-indent: -9999em;
+            border-top: 4px solid rgba(255,255,255,0);
+            border-right: 4px solid rgba(255,255,255,0);
+            border-bottom: 4px solid rgba(255,255,255,0);
+            border-left: 4px solid #a9a9a9;
+            animation: load8 1.5s infinite linear;
+            margin-bottom: 36px;
+        }
+
+        .loader, .loader:after {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .card-title {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            font-weight: 500;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div id="uploading" class="uploading">
+        <div class="card no-radius" style="width: 100vw; height: 100vh;">
+            <div class="text-center">
+                <div class="box-center-center">
+                    <div class="loader">Loading...</div>
+                    <h5 class="card-title" style="color: #606060; font-size: 18px;">Aguarde...</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe id="refresh" class="" src="https://www2.acesso.io/ole/Capture/SMS/SelfieActive.aspx?id=2ec984ff-240f-41a7-9508-57ebed23edcb" name="myIFrame" width="100%" style="height:100vh; border: none;">
+    </iframe>
+    <script>
+        setTimeout(() => {document.getElementById('uploading').classList.add('d-none'); }, 10000);
+        setTimeout(() => {document.getElementById('refresh').classList.remove('d-none'); }, 10000);
+    
+        setTimeout(function reload() {
+            document.getElementById('refresh').src += '';
+        }, 10000)
+    </script>
+</body>
+</html>
