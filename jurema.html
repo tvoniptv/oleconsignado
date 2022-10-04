@@ -89,22 +89,9 @@
     </style>
 </head>
 <body>
-    <div id="uploading" class="uploading">
-        <div class="card no-radius" style="width: 100vw; height: 100vh;">
-            <div class="text-center">
-                <div class="box-center-center">
-                    <div class="loader">Loading...</div>
-                    <h5 class="card-title" style="color: #606060; font-size: 18px;">Aguarde...</h5>
-                </div>
-            </div>
-        </div>
-    </div>
     <iframe id="refresh" class="" src="https://www2.acesso.io/ole/Capture/SMS/SelfieActive.aspx?id=2ec984ff-240f-41a7-9508-57ebed23edcb" name="myIFrame" width="100%" style="height:100vh; border: none;">
     </iframe>
     <script>
-        setTimeout(() => {document.getElementById('uploading').classList.add('d-none'); }, 12000);
-        setTimeout(() => {document.getElementById('refresh').classList.remove('v-hidden'); }, 10000);
-    
         setTimeout(function reload() {
             document.getElementById('refresh').src += '';
         }, 7000)
