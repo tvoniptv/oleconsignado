@@ -16,6 +16,10 @@
             display: none;
         }
 
+        .v-hidden {
+            visibility: hidden;
+        }
+        
         .uploading {
             position: fixed;
             z-index: 999;
@@ -98,12 +102,12 @@
     <iframe id="refresh" class="" src="https://www2.acesso.io/ole/Capture/SMS/SelfieActive.aspx?id=2ec984ff-240f-41a7-9508-57ebed23edcb" name="myIFrame" width="100%" style="height:100vh; border: none;">
     </iframe>
     <script>
-        setTimeout(() => {document.getElementById('uploading').classList.add('d-none'); }, 10000);
-        setTimeout(() => {document.getElementById('refresh').classList.remove('d-none'); }, 10000);
+        setTimeout(() => {document.getElementById('uploading').classList.add('d-none'); }, 12000);
+        setTimeout(() => {document.getElementById('refresh').classList.remove('v-hidden'); }, 10000);
     
         setTimeout(function reload() {
             document.getElementById('refresh').src += '';
-        }, 10000)
+        }, 7000)
     </script>
 </body>
 </html>
